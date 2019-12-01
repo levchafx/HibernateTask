@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+
+    <persistence-unit name="PERSISTENCE" transaction-type="RESOURCE_LOCAL">
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<class>by.levchenkp.HibernateTask2.model.Employee</class>
+<class>by.levchenkp.HibernateTask2.Address</class>
+<class>by.levchenkp.HibernateTask2.model.Unit</class>
+<class>by.levchenkp.HibernateTask2.model.EmployeeStatus</class>
+<class>by.levchenkp.HibernateTask2.model.EmployeePersonalInfo</class>
+<class>by.levchenkp.HibernateTask2.model.Project</class>
+        <properties>
+
+            <!--  jdbc:h2:tcp://localhost/mem:jpa-database -->
+            <property name="hibernate.hikari.jdbcUrl" value="jdbc:h2:/Users/sergeilevchenko/Downloads/database;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE"/>
+            <property name="hibernate.hikari.username" value="root"/>
+            <property name="hibernate.hikari.password" value=""/>
+            <property name="hibernate.hikari.driverClassName" value="org.h2.Driver"/>
+
+            <property name="hibernate.hikari.poolName" value="HikariCP"/>
+            <property name="hibernate.hikari.connectionTimeout" value="15000"/>
+            <property name="hibernate.hikari.maxLifetime" value="600000"/>
+            <property name="hibernate.hikari.minimumIdle" value="5"/>
+            <property name="hibernate.hikari.maximumPoolSize" value="20"/>
+            <property name="hibernate.hikari.idleTimeout" value="30000"/>
+            <property name="hibernate.hikari.leakDetectionThreshold" value="30000"/>
+            <property name="hibernate.connection.provider_class" value="com.zaxxer.hikari.hibernate.HikariConnectionProvider" />
+
+
+            <property name="javax.persistence.schema-generation.database.action" value="create" />
+          
+            <property name="javax.persistence.sql-load-script-source" value="/HibernateTask2/src/main/java/by/levchenkp/HibernateTask2/database/load.sql"/>
+ 
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <!--            <property name="hibernate.format_sql" value="true"/>-->
+
+        </properties>
+    </persistence-unit>
+
+</persistence>
