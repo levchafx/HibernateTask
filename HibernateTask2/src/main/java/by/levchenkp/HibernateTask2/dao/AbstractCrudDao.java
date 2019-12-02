@@ -45,11 +45,11 @@ public abstract class AbstractCrudDao<T> {
 		em.getTransaction().begin();
 		T t = em.find(getTClass(), id);
 		em.remove(t);
+
 		em.getTransaction().commit();
 		em.close();
 	}
 
-	@Transactional
 	public T findById(int id) {
 		EntityManager em = HibernateUtil.getEntityManager();
 		em.getTransaction().begin();

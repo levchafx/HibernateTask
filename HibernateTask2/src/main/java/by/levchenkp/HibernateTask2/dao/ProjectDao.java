@@ -12,7 +12,7 @@ public class ProjectDao extends AbstractCrudDao<Project> {
 	@Override
 	protected String getSqlForGetAll() {
 
-		return "select*from project";
+		return "select * from Project ";
 	}
 
 	@Override

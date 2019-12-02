@@ -12,7 +12,7 @@ public class EmployeeDao extends AbstractCrudDao<Employee> {
 	@Override
 	protected String getSqlForGetAll() {
 
-		return "select*from employee";
+		return "select * from Employee ";
 	}
 
 	@Override

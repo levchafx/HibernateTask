@@ -44,11 +44,14 @@ public class Runner {
 		Project pr = new Project();
 		pr.setPName("Library");
 		// projectDao.create(pr);
-		// employeeDao.assignToUnit(5, 4);
-		employeeDao.assignToProject(3, 4);
+		employeeDao.assignToUnit(2, 3);
+		// employeeDao.assignToProject(1, 1);
+		// unitDao.delete(2);
+		System.out.println(unitDao.getAll());
+		System.out.println(projectDao.getAll());
 		for (Employee emp : employeeDao.getAll()) {
 			System.out.println(emp + " " + employeeDao.getProjects(emp.getId()));
 		}
-		System.out.println(projectDao.getProjectsWithEmployeesNotExternal());
+		// System.out.println(projectDao.getProjectsWithEmployeesNotExternal());
 	}
 }

@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,8 +29,10 @@ public class Unit {
 	private int id;
 	@Column(unique = true)
 	private String uName;
+
+	@OneToMany(mappedBy = "unit", fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST })
+
 	@ToString.Exclude
-	@OneToMany(mappedBy = "unit", cascade = CascadeType.PERSIST)
 	private Set<Employee> employees;
 
 }
