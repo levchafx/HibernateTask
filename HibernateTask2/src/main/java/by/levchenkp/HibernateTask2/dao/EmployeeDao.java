@@ -1,6 +1,7 @@
 package by.levchenkp.HibernateTask2.dao;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 
@@ -21,11 +22,11 @@ public class EmployeeDao extends AbstractCrudDao<Employee> {
 		return Employee.class;
 	}
 
-	public List<Project> getProjects(int id) {
+	public Set<Project> getProjects(int id) {
 		EntityManager em = HibernateUtil.getEntityManager();
 		em.getTransaction().begin();
-		List<Project> projects = em.createQuery("select p from Project p join p.employees e on e.id=:id")
-				.setParameter("id", id).getResultList();
+		Set<Project> projects = new HashSet(em.createQuery("select p from Project p join p.employees e on e.id=:id")
+				.setParameter("id", id).getResultList());
 		em.getTransaction().commit();
 		em.close();
 		return projects;

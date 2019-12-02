@@ -30,7 +30,7 @@ public class Unit {
 	@Column(unique = true)
 	private String uName;
 
-	@OneToMany(mappedBy = "unit", fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST })
+	@OneToMany(mappedBy = "unit", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 
 	@ToString.Exclude
 	private Set<Employee> employees;
