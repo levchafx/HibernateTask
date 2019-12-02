@@ -1,58 +1,59 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>by.levchenkp</groupId>
-  <artifactId>HibernateTask2</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+	<groupId>by.levchenkp</groupId>
+	<artifactId>HibernateTask2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <name>HibernateTask2</name>
-  <url>http://maven.apache.org</url>
+	<name>HibernateTask2</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-  <dependencies>
+	<dependencies>
 
-  <dependency>
-  	<groupId>org.projectlombok</groupId>
-  	<artifactId>lombok</artifactId>
-  	<version>1.18.10</version>
-  </dependency>
-  <dependency>
-  	<groupId>javax.servlet</groupId>
-  	<artifactId>javax.servlet-api</artifactId>
-  	<version>4.0.1</version>
-  </dependency>
-  <dependency>
-  	<groupId>jstl</groupId>
-  	<artifactId>jstl</artifactId>
-  	<version>1.2</version>
-  </dependency>
- <dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>5.2.17.Final</version>
-</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.10</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.2.17.Final</version>
+		</dependency>
 
 
-  <dependency>
+		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.4.200</version>
 		</dependency>
 		<dependency>
-		 <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-hikaricp</artifactId>
-    <version>5.2.17.Final</version>
-    <type>pom</type>
-</dependency>
-  </dependencies>
-  <build>
-    <finalName>HibernateTask2</finalName>
-    <plugins>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-hikaricp</artifactId>
+			<version>5.2.17.Final</version>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>HibernateTask2</finalName>
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -62,6 +63,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-    
-  </build>
+
+	</build>
 </project>
