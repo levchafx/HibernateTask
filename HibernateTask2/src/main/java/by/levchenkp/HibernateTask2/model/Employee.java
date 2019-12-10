@@ -43,12 +43,10 @@ public class Employee {
 	@Enumerated(EnumType.STRING)
 	private EmployeeStatus status;
 	@ToString.Exclude
-	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinTable(name = "employee_project", joinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "project_id", referencedColumnName = "id"))
 	private Set<Project> projects;
-
 	@ManyToOne
-
 	private Unit unit;
 	@Column
 	private boolean external;

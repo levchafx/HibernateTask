@@ -12,7 +12,7 @@ public class UnitDao extends AbstractCrudDao<Unit> {
 	}
 
 	@Override
-	Class<Unit> getTClass() {
+	protected Class<Unit> getTClazz() {
 
 		return Unit.class;
 	}

@@ -29,9 +29,7 @@ public class Unit {
 	private int id;
 	@Column(unique = true)
 	private String uName;
-
-	@OneToMany(mappedBy = "unit", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-
+	@OneToMany(mappedBy = "unit", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@ToString.Exclude
 	private Set<Employee> employees;
 

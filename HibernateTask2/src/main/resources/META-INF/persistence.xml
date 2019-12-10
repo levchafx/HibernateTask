@@ -5,7 +5,6 @@
 
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 <class>by.levchenkp.HibernateTask2.model.Employee</class>
-<class>by.levchenkp.HibernateTask2.Address</class>
 <class>by.levchenkp.HibernateTask2.model.Unit</class>
 <class>by.levchenkp.HibernateTask2.model.EmployeeStatus</class>
 <class>by.levchenkp.HibernateTask2.model.EmployeePersonalInfo</class>

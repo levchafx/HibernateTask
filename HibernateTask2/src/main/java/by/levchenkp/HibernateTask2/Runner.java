@@ -1,58 +1,49 @@
 package by.levchenkp.HibernateTask2;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import by.levchenkp.HibernateTask2.dao.EmployeeDao;
-import by.levchenkp.HibernateTask2.dao.ProjectDao;
-import by.levchenkp.HibernateTask2.dao.UnitDao;
 import by.levchenkp.HibernateTask2.model.Address;
 import by.levchenkp.HibernateTask2.model.Employee;
 import by.levchenkp.HibernateTask2.model.EmployeePersonalInfo;
 import by.levchenkp.HibernateTask2.model.EmployeeStatus;
-import by.levchenkp.HibernateTask2.model.Project;
-import by.levchenkp.HibernateTask2.model.Unit;
 
 public class Runner {
-	public static void main(String[] args) {
-		EmployeeDao employeeDao = new EmployeeDao();
-		ProjectDao projectDao = new ProjectDao();
-		UnitDao unitDao = new UnitDao();
-		Set<Project> projects = new HashSet<Project>();
+	private static EmployeeDao employeeDao = new EmployeeDao();
+
+	private static Employee createEmployee() {
 		Employee e = new Employee();
 		Address a = new Address();
 		a.setAddress("gomel,tsarikov street");
-
 		EmployeePersonalInfo i = new EmployeePersonalInfo();
 		i.setAge(35);
 		i.setName("sergei");
 		e.setExternal(true);
-
 		e.setAddress(a);
-
 		e.setInfo(i);
 		e.setStatus(EmployeeStatus.VACANT);
-		Project p = new Project();
-		p.setPName("LoginApp");
-		// projectDao.create(p);
-		// employeeDao.create(e);
-		Unit u = new Unit();
-		u.setUName("Java");
-		// unitDao.create(u);
-		// Employee e1 = employeeDao.findById(1);
-		// employeeDao.delete(2);
-		Project pr = new Project();
-		pr.setPName("Library");
-		// projectDao.create(pr);
-		// employeeDao.assignToUnit(2, 3);
-		// employeeDao.assignToProject(2, 5);
-		// unitDao.delete(2);
-		// projectDao.delete(4);
-		System.out.println(unitDao.getAll());
-		System.out.println(projectDao.getAll());
-		for (Employee emp : employeeDao.getAll()) {
-			System.out.println(emp + " " + employeeDao.getProjects(emp.getId()));
-		}
-		// System.out.println(projectDao.getProjectsWithEmployeesNotExternal());
+		return employeeDao.create(e);
+	}
+
+	private static void deleteEmployee() {
+		employeeDao.delete(1);
+
+	}
+
+	private static Employee updateEmployee() {
+		Employee e = employeeDao.findById(1);
+		e.setAddress(new Address(" minsk,prospekt pobeditelei"));
+		e.getInfo().setName("someName");
+		e.getInfo().setAge(155);
+		return employeeDao.update(e);
+
+	}
+
+	private static List<Employee> getAllEmployees() {
+		return employeeDao.getAll();
+	}
+
+	public static void main(String[] args) {
+
 	}
 }

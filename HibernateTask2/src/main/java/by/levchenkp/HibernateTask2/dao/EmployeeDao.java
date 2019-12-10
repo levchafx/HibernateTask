@@ -17,7 +17,7 @@ public class EmployeeDao extends AbstractCrudDao<Employee> {
 	}
 
 	@Override
-	Class<Employee> getTClass() {
+	protected Class<Employee> getTClazz() {
 
 		return Employee.class;
 	}

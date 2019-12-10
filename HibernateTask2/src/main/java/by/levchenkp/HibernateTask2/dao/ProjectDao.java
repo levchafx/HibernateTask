@@ -17,7 +17,7 @@ public class ProjectDao extends AbstractCrudDao<Project> {
 	}
 
 	@Override
-	Class<Project> getTClass() {
+	protected Class<Project> getTClazz() {
 
 		return Project.class;
 	}
@@ -37,8 +37,8 @@ public class ProjectDao extends AbstractCrudDao<Project> {
 	public Set<Project> getProjectsWithEmployeesNotExternal() {
 		EntityManager em = HibernateUtil.getEntityManager();
 		em.getTransaction().begin();
-		Set<Project> projects = (Set<Project>) em
-				.createQuery("select p from Project p  join p.employees e on e.external='false'").getResultList();
+		Set<Project> projects = new HashSet<Project>(
+				em.createQuery("select p from Project p  join p.employees e on e.external='false'").getResultList());
 		em.getTransaction().commit();
 		em.close();
 		return projects;
